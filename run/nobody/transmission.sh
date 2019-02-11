@@ -11,7 +11,7 @@ if [[ "${transmission_running}" == "false" ]]; then
 	#/home/nobody/config_transmission.py "${transmission_ip}"
 
 	# run transmission daemon (daemonized, non-blocking)
-	/usr/bin/transmission-daemon -i {$transmission_ip} -g /config -e /config/transmission-daemon.log
+	/usr/bin/transmission-daemon -i "${vpn_ip}" -T -g /config -e /config/transmission-daemon.log
 
 	# make sure process transmission-daemon DOES exist
 	retry_count=30
